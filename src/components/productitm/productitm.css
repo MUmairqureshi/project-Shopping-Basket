@@ -1,0 +1,558 @@
+
+*{
+
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    font-family: "Poppins";
+    --heading-secondary-color: hsl(0, 0%, 55%);
+    --secondary-card-color: whitesmoke;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+input{
+    display: none;
+}
+
+.container{
+    margin: 0 auto;
+    /* background-color: green; */
+    max-width: 150rem; 
+    min-height: 50rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+.card-container{
+    display: flex;
+
+    flex-direction: row;
+
+    box-sizing: border-box;
+
+}
+
+.shoe-area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: left;
+    position: relative;
+
+}
+
+.logo-div{
+    margin: 2rem 0  0 1.5rem;
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.logo-div img{
+    width: 70%;
+    opacity: 0.1;
+}
+
+.floating-div{
+    /* background-color: yellowgreen; */
+    height: 120%;
+    width: 150%;
+    margin-left: -30%;
+    display: grid;
+    place-items: center;
+    align-items: center;
+}
+
+.shoe-area :is(.shoe-1, .shoe-2, .shoe-3, .shoe-4) {
+
+    position: absolute;
+ margin-right: -10%;
+    height: 100%;
+    width: 70%;
+    margin-top: 3%;
+
+
+}
+
+
+
+:is(.shoe-1, .shoe-2, .shoe-3, .shoe-4) img{
+    width: 100%;
+    opacity: 0;
+
+}
+
+
+
+.text-area{
+    background-color: var(--text-area-color);
+
+    width: 80%;
+    margin-top: -5%;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    border-radius: 10 10.81rem 10.8rem  0 
+}
+
+.text-area .heading-area{
+    padding: 1rem;
+}
+
+.heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-left: -40%;
+    transition: color 0.3s ease-in-out;
+}
+
+.heading-area h4{
+  margin-left: -40%;
+  font-weight: 700;
+    margin: 2.25rem 0 0 0;
+}
+
+.paragraph-area{
+  margin-left: 0%;
+
+    font-size: 2rem;
+}
+
+
+.color-selection{
+    margin: 1rem 1rem 1.5rem 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.8rem;
+    box-sizing: border-box;
+
+    
+}
+
+.color-selection h5{
+    font-size: 1rem;
+}
+
+.color-selection .colors{
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-pick-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+
+.color-selection .color-1{
+    background-color: var(--primary-color-1);
+}
+
+.color-selection .color-2{
+    background-color: var(--primary-color-2);
+}
+
+.color-selection .color-3{
+    background-color: var(--primary-color-3);
+}
+
+.color-selection .color-4{
+    background-color: var(--primary-color-4);
+}
+
+
+
+
+.price-and-buy-btn{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    
+}
+
+.price-and-buy-btn :is(.price-1, .price-2, .price-3, .price-4){
+    display: none;
+    font-weight: 800;
+    font-size: 2.5rem;
+
+    transition: color 0.3s ease-in-out;
+}
+
+.buy-btn{
+    padding: 1em 1.5em;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color rgb(60, 166, 228);
+}
+
+/* ========== Themes ======== */
+
+/* Theme 1 */
+#color-1:checked ~ .text-area .color-selection .color-pick-div .color-1{
+    outline: 2px solid var(--primary-color-1);
+    outline-offset: 2px;
+}
+
+#color-1:checked ~ .shoe-area{
+    background-color: var(--primary-color-1);
+}
+
+
+#color-1:checked ~ .text-area .heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    color: var(--primary-color-1);
+    margin-left: -5%;        
+}
+
+#color-1:checked ~ .text-area .price-and-buy-btn .price-1{
+    display: block;
+    /* margin-top: -14%; */
+    color: var(--primary-color-1);
+}
+
+#color-1:checked ~* .buy-btn{
+    background-color: rgb(112, 95, 145);
+}
+
+/* Theme 2 */
+#color-2:checked ~ .text-area .color-selection .color-pick-div .color-2{
+    outline: 2px solid var(--primary-color-2);
+    outline-offset: 2px;
+}
+
+#color-2:checked ~ .shoe-area{
+    background-color: var(--primary-color-2);
+}
+
+
+#color-2:checked ~ .text-area .heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    color: var(--primary-color-2);
+    margin-left: 10%; 
+    
+    /* width: 10px;        */
+
+}
+
+#color-2:checked ~ .text-area .price-and-buy-btn .price-2{
+    display: block;
+    color: var(--primary-color-2);
+
+}
+
+#color-2:checked ~* .buy-btn{
+    background-color: var(--primary-color-2);
+}
+
+/* Theme 3 */
+#color-3:checked ~ .text-area .color-selection .color-pick-div .color-3{
+    outline: 2px solid var(--primary-color-3);
+    outline-offset: 2px;
+    
+}
+
+#color-3:checked ~ .text-area .price-and-buy-btn .price-3{
+    display: block;
+        margin-top: -10%;
+
+    color: var(--primary-color-3);
+    
+}
+
+#color-3:checked ~ .shoe-area{
+    background-color: var(--primary-color-3);
+}
+
+#color-3:checked ~ .text-area .heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    color: var(--primary-color-3);
+
+    
+}
+
+#color-3:checked ~* .buy-btn{
+    background-color: var(--primary-color-3);
+}
+
+
+/* Theme 4 */
+#color-4:checked ~ .text-area .color-selection .color-pick-div .color-4{
+    outline: 2px solid var(--primary-color-4);
+    outline-offset: 2px;
+    
+}
+
+#color-4:checked ~ .shoe-area{
+    background-color: var(--primary-color-4);
+}
+
+#color-4:checked ~ .text-area .price-and-buy-btn .price-4{
+    display: unset;
+
+    color: var(--primary-color-4);
+
+    
+    
+}
+
+#color-4:checked ~ .text-area .heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    color: var(--primary-color-4);
+    
+
+}
+
+
+#color-4:checked ~* .buy-btn{
+    background-color: var(--primary-color-4);
+}
+
+/* Transition when the screen is higher than 1000px */
+
+@media screen and (min-width: 62.5rem){
+
+    #color-1:checked ~ .shoe-area .floating-div .shoe-1 {
+        transition-delay: 0.2s;
+        animation-delay: 0.3s;
+        transform: rotateZ(0);
+        z-index: 99;
+
+    }
+
+    #color-1:checked ~ .shoe-area .floating-div .shoe-1 img{
+        transition-delay: 0.2s;
+        opacity: 1;
+        
+    }
+
+
+    /* Theme 2 */
+    #color-2:checked ~ .shoe-area .floating-div .shoe-2 {
+        transition-delay: 0.2s;
+        transform: rotateZ(0);
+        z-index: 99;
+        
+    }
+
+    #color-2:checked ~ .shoe-area .floating-div .shoe-2 img{
+        transition-delay: 0.2s;   
+        opacity: 1;
+    }
+
+    /* Theme 3 */
+    #color-3:checked ~ .shoe-area .floating-div .shoe-3 {
+        transition-delay: 0.2s;   
+        transform: rotateZ(0);
+        z-index: 99;
+    }
+
+    #color-3:checked ~ .shoe-area .floating-div .shoe-3 img{
+        transition-delay: 0.2s;   
+        opacity: 1;
+    }
+
+
+    /* Theme 4 */
+    #color-4:checked ~ .shoe-area .floating-div .shoe-4 {
+        transition-delay: 0.2s;
+        transform: rotateZ(0);
+        z-index: 99;
+    }
+
+    #color-4:checked ~ .shoe-area .floating-div .shoe-4 img{
+        transition-delay: 0.2s;   
+        opacity: 1;
+        
+    }
+}
+
+
+#color-4:checked ~* .heading-area h2{
+          font-weight: 1000;
+        font-size: 2.5rem;      
+    color: var(--primary-color-4);
+ 
+
+
+}
+
+
+
+@media screen and (max-width: 62.5rem){
+    .container{
+        padding: 1rem;  
+    }
+    
+        .card-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Theme 2 */
+    #color-2:checked ~ .shoe-area .floating-div .shoe-2 {
+        transition-delay: 0.2s;
+        opacity: 1;
+        transform: rotateZ(0);
+        
+    }
+
+    #color-2:checked ~ .shoe-area .floating-div .shoe-2 img{
+        transition-delay: 0.2s;   
+        opacity: 1;
+    }
+
+    /* Theme 3 */
+    #color-3:checked ~ .shoe-area .floating-div .shoe-3 {
+        transition-delay: 0.2s; 
+        opacity: 1;  
+        transform: rotateZ(0);
+    }
+
+    #color-3:checked ~ .shoe-area .floating-div .shoe-3 img{
+        transition-delay: 0.2s;   
+        opacity: 1;
+    }
+
+
+    /* Theme 4 */
+    #color-4:checked ~ .shoe-area .floating-div .shoe-4 {
+        transition-delay: 0.2s;
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+
+    .shoe-area{
+        width: 100%;
+        height: 40vw;
+        padding: 1rem 0;
+        border-radius: 0.8rem 0.8rem 0 0;
+    }
+
+    .shoe-area :is(.shoe-1, .shoe-2, .shoe-3, .shoe-4) {
+    /* background-color: yellow; */
+    position: absolute;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+    }
+
+    /* Transition for any screen lower than 1000px */
+
+    .shoe-area :is(.shoe-1, .shoe-2, .shoe-3, .shoe-4) {
+        /* background-color: yellow; */
+        transform: rotateZ(0deg)  translateY(-10%);
+        width: 70%;
+        margin: 1rem 0;
+        opacity: 0;
+    }
+
+    :is(.shoe-1, .shoe-2, .shoe-3, .shoe-4) img{
+        transform: rotateZ(0) scale(1) ;
+        opacity: 1;
+    }
+
+    #color-1:checked ~ .shoe-area .floating-div .shoe-1 {
+        transition-delay: 0.2s;
+        opacity: 1;
+        transform: rotateZ(0);
+    }
+
+    #color-1:checked ~ .shoe-area .floating-div .shoe-1 img{
+        transition-delay: 0.2s;
+        opacity: 1;
+    }
+
+
+    #color-4:checked ~ .shoe-area .floating-div .shoe-4 img{
+        transition-delay: 0.2s;   
+        opacity: 1;  
+    }
+
+    /* Transition end */
+
+    .logo-div img{
+        width: 40%;
+    }
+
+    .text-area{
+        /* background-color: rgb(114, 91, 114); */
+        width: 100%;
+        display: flex;
+        
+        flex-direction: column;
+        padding: 1rem;
+        box-sizing: border-box;
+        border-radius: 0 0  0.8rem 0.8rem ;
+        margin-top: 23%;
+
+    }
+
+    .paragraph-area, .color-selection{
+        margin: 1.5rem 1rem;
+   
+      }
+}
+
+/* ====== Phone Size ===== */
+@media screen and (max-width: 26.9rem){
+    
+    .paragraph-area{
+        margin: 5rem;
+        margin-left: 30%;
+
+        margin-top: 5%;        
+        font-weight: 50;
+        font-size: 1.5rem;      
+    }
+
+    .paragraph-area, .color-selection{
+        margin: 0.7rem 1rem;
+        margin-top: 0%;        
+        
+    }
+
+    .color-selection{
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        row-gap: 0.8rem;;
+    }
+
+    .price-and-buy-btn{
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        row-gap: 0.8rem;
+        align-items: flex-start;
+        font-weight: 50;
+        /* font-size: 11.5rem;       */
+        margin-top: -15%;  }
+}
